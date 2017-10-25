@@ -4,12 +4,14 @@
 * [EIA-232](eia-232.md)
   * [Karakteristik Sinyal EIA-232](eia-232/karakteristik-sinyal-eia-232.md)
   * [Frame Data EIA-232](eia-232/frame-data-eia-232.md)
-  * Mode Operasi EIA-232
-  * Keterbatasan EIA-232
-  * Percobaan Transmisi Data Melalui EIA-232
+  * [Mode Operasi EIA-232](eia-232/mode-operasi-eia-232.md)
+  * [Keterbatasan EIA-232](eia-232/keterbatasan-eia-232.md)
+  * [Percobaan Transmisi Data Melalui EIA-232](eia-232/percobaan-transmisi-data-melalui-eia-232.md)
 * [EIA-485](eia-485.md)
+  * [Karakteristik Sinyal EIA-485](eia-485/karakteristik-sinyal-eia-485.md)
+  * [Frame Data EIA-485](eia-485/frame-data-eia-485.md)
+  * [Mode Operasi EIA-485](eia-485/mode-operasi-eia-485.md)
+  * [Percobaan Transmisi Data Melalui EIA-485](eia-485/percobaan-transmisi-data-melalui-eia-485.md)
 * [CAN](can.md)
 * [Ethernet](ethernet.md)
-  * [dfsfsf](ethernet/dfsfsf.md)
-  * [ffff](ethernet/ffff.md)
 
