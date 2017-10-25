@@ -1,4 +1,4 @@
-## Frame Data EIA-232
+## 1.2 Frame Data EIA-232
 
 Frame data pada EIA-232 terdiri dari :
 

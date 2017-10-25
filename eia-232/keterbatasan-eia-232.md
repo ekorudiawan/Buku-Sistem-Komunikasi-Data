@@ -1,4 +1,4 @@
-## Keterbatasan EIA-232
+## 1.4 Keterbatasan EIA-232
 
 EIA-232 memiliki beberapa keterbatasan jika digunakan untuk transmisi data industrial. Beberapa keterbatasan tersebut antara lain sebagi berikut ini :
 

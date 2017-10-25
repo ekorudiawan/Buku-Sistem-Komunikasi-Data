@@ -1,4 +1,4 @@
-## Karakteristik Sinyal EIA-485
+## 2.1 Karakteristik Sinyal EIA-485
 
 EIA-485 memiliki karakteristik sinyal sebagai berikut :
 

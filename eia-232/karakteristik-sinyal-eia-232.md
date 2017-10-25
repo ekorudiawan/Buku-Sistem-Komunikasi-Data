@@ -1,4 +1,4 @@
-## Karakteristik Sinyal EIA-232
+## 1.1 Karakteristik Sinyal EIA-232
 
 EIA-232 memiliki karakteristik sinyal sebagai berikut :
 

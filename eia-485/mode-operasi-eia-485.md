@@ -1,4 +1,4 @@
-## Mode Operasi EIA-485
+## 2.3 Mode Operasi EIA-485
 
 ### Mode Dua Kabel \(Two Wire Network\)
 

@@ -13,5 +13,7 @@
   * [Mode Operasi EIA-485](eia-485/mode-operasi-eia-485.md)
   * [Percobaan Transmisi Data Melalui EIA-485](eia-485/percobaan-transmisi-data-melalui-eia-485.md)
 * [CAN](can.md)
+  * [Karakteristik Sinyal CAN BUS](can/karakteristik-sinyal-can-bus.md)
+  * [Frame Data CAN BUS](can/frame-data-can-bus.md)
 * [Ethernet](ethernet.md)
 

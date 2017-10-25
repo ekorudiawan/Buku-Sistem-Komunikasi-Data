@@ -1,4 +1,4 @@
-## Mode Operasi EIA-232
+## 1.3 Mode Operasi EIA-232
 
 ### Half Duplex
 
