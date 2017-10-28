@@ -13,7 +13,7 @@ Untuk melakukan percobaan komunikasi data melaui EIA-485 dibutuhkan beberapa mod
 3. [Modul Push Button](https://www.dfrobot.com/product-1098.html) 1 pcs
 4. [Modul LED](https://www.dfrobot.com/product-490.html) 1 pcs
 
-**Gambar Percobaan                              
+**Gambar Percobaan                                
 **![](/assets/Webp.net-resizeimage.jpg)
 
 Koneksi
@@ -90,7 +90,7 @@ Untuk melakukan percobaan komunikasi data melaui EIA-485 dibutuhkan beberapa mod
 3. [Modul Push Button](https://www.dfrobot.com/product-1098.html) 1 pcs
 4. [Modul LED](https://www.dfrobot.com/product-490.html) 1 pcs
 
-**Gambar Percobaan                              
+**Gambar Percobaan                                
 **![](/assets/Webp.net-resizeimage.jpg)
 
 Koneksi
@@ -109,20 +109,20 @@ Koneksi
    #include <SoftwareSerial.h>
    #define LED 4
 
-   SoftwareSerial 485Master(3, 2);
+   SoftwareSerial _485Master(3, 2);
 
    void setup() {
-     485Master.begin(9600);
+     _485Master.begin(9600);
      pinMode(LED, OUTPUT);
    }
 
    void loop() {
      // Kirim data ke master untuk request data
-     485Master.write(255);
+     _485Master.write(255);
      // Cek data yang dikirimkan slave
-     if (485Master.available()) {
+     if (_485Master.available()) {
        // Baca data dari slave
-       unsigned char dataFromSlave = 485Master.read();
+       unsigned char dataFromSlave = _485Master.read();
        if (dataFromSlave == 255) {
          digitalWrite(LED, 1);
        }
