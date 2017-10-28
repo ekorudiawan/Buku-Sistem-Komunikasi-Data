@@ -13,7 +13,7 @@ Untuk melakukan percobaan komunikasi data melaui EIA-485 dibutuhkan beberapa mod
 3. [Modul Push Button](https://www.dfrobot.com/product-1098.html) 1 pcs
 4. [Modul LED](https://www.dfrobot.com/product-490.html) 1 pcs
 
-**Gambar Percobaan                      
+**Gambar Percobaan                          
 **![](/assets/Webp.net-resizeimage.jpg)
 
 Koneksi
@@ -90,7 +90,7 @@ Untuk melakukan percobaan komunikasi data melaui EIA-485 dibutuhkan beberapa mod
 3. [Modul Push Button](https://www.dfrobot.com/product-1098.html) 1 pcs
 4. [Modul LED](https://www.dfrobot.com/product-490.html) 1 pcs
 
-**Gambar Percobaan                      
+**Gambar Percobaan                          
 **![](/assets/Webp.net-resizeimage.jpg)
 
 Koneksi
@@ -169,5 +169,55 @@ Koneksi
 
 4. Lakukan ujicoba dengan melakukan penekanan tombol pada arduino slave dan perhatikan nyala lampu LED pada arduino master.
 
+### 2.4.2 Master Mengirim Data Ke Multi Slave
+
+Percobaan kali ini merupakan pengembangan dari percobaan pertama. Pada percobaan kali ini perangkat yang terhubung dan saling bertukar data ada tiga \[erangkat. Satu perangkat berfungsi sebagai master dan dua perangkat lainnya berfungsi sebagai slave. Master dihubungkan dengan dua push button dan masing-masing slave dihubungkan dengan satu LED. Pada percobaan kali ini master akan mengirimkan data ke kedua slave tersebut. Data yang dikirimkan akan disertai dengan informasi address yang merupakan data 1 byte yang berisi address dari masing-masing slave. Selain address, master juga akan mengirimkan 1 byte data yang merupakan data untuk menyalakan LED pada masing-masing slave. Sehingga dalam sekali pengiriman, 2 byte data akan dikirimkan master ke semua slave secara broadcast. Slave akan merespon data yang dikirimkan oleh master dengan melakukan pengecekan terlebih dahulu terhadap nilai address. Jika nilai address sesuai dengan yang telah di definisikan pada slave maka data akan diproses oleh slave tersebut. Namun jika ternyata address tidak sesuai dengan yang telah didefinisikan pada slave, data akan diabaikan dan tidak akan diproses. Untuk infomasi tentang address dan data pada percobaan kali ini silahkan lihat tabel berikut
+
+Tabel Definisi Address pada Slave 
+
+| Perangkat Slave | Address |
+| :--- | :--- |
+| Slave1 | 1 |
+| Slave2 | 3 |
+
+Tabel Definisi Data pada Slave
+
+| Data | Kondisi LED |
+| :--- | :--- |
+| 100 | Mati |
+| 200 | Nyala |
+
+Contoh format data yang dikirimkan master ke Slave1 untuk menyalakan LED
+
+```
+// Kirim address terlebih dahulu 
+// Address Slave1 = 1
+_485Master.write(1); 
+// Kemudian kirim data untuk menyalakan LED = 100
+_485Master.write(100);
+```
+
+**Kebutuhan Komponen**
+
+Untuk melakukan percobaan komunikasi data melaui EIA-485 dibutuhkan beberapa modul komponen berikut ini :
+
+1. [Arduino Uno](https://store.arduino.cc/usa/arduino-uno-rev3) 3 pcs
+2. [RS485 Shield](http://linksprite.com/wiki/index.php5?title=RS485_Shield_V2.1_for_Arduino) 3 pcs
+3. [Modul Push Button](https://www.dfrobot.com/product-1098.html) 2 pcs
+4. [Modul LED](https://www.dfrobot.com/product-490.html) 2 pcs
+
+**Gambar Percobaan **
+
+Koneksi
+
+1. 485-A Master ke 485-A Slave1 dan 485-A Slave2
+2. 485-B Master ke 485-B Slave1 dan 485-B Slave2
+3. Modul Button ke pin 4 dan 5 Arduino Master
+4. Modul LED masing-masing dihubungkan ke pin 4 Arduino Slave1 dan Slave2
+
+**Langkah Percobaan**
+
+1. Hubungkan semua modul seperti pada gambar percobaan diatas
+2. 
 
 
