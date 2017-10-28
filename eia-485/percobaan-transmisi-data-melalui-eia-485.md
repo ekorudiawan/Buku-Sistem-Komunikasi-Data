@@ -11,7 +11,7 @@ Untuk melakukan percobaan komunikasi data melaui EIA-485 dibutuhkan beberapa mod
 3. [Modul Push Button](https://www.dfrobot.com/product-1098.html) 1 pcs
 4. [Modul LED](https://www.dfrobot.com/product-490.html) 1 pcs
 
-**Gambar Percobaan        
+**Gambar Percobaan          
 **![](/assets/Webp.net-resizeimage.jpg)
 
 Koneksi
@@ -24,16 +24,16 @@ Koneksi
 **Langkah Percobaan**
 
 1. Hubungkan semua modul seperti pada gambar percobaan diatas
-2. Buatlah program pada Arduino yang berfungsi sebagai pengirim seperti berikut ini. Program berikut ini berfungsi untuk mendeteksi penekanan tombol dan mengirimkan data ke receiver melalui EIA-485. Jika tombol ditekan, data yang dikirim adalah 255 dan jika tombol tidak ditekan data yang dikirimkan adalah 0.  
+2. Buatlah program pada Arduino yang berfungsi sebagai pengirim seperti berikut ini. Program berikut ini berfungsi untuk mendeteksi penekanan tombol dan mengirimkan data ke receiver melalui EIA-485. Jika tombol ditekan, data yang dikirim adalah 255 dan jika tombol tidak ditekan data yang dikirimkan adalah 100.  
    `#include <SoftwareSerial.h>`
 
    `#define BUTTON 4`
 
-   `SoftwareSerial 485Transmitter(3, 2);`
+   `SoftwareSerial _485Master(3, 2);`
 
    `void setup() {`
 
-   `485Transmitter.begin(9600);`
+   `_485Master.begin(9600);`
 
    `pinMode(BUTTON, INPUT_PULLUP);`
 
@@ -43,28 +43,28 @@ Koneksi
 
    `if (digitalRead(BUTTON) == LOW) {`
 
-   `485Transmitter.write(255);`
+   `_485Master.write(255);`
 
    `}`
 
    `else {`
 
-   `485Transmitter.write(0);`
+   `_485Master.write(100);`
 
    `}`
 
    `}`
 
-3. Buatlah program pada Arduino yang berfungsi sebagai penerima data seperti berikut ini. Program berikut ini berfungsi untuk menerima data dari transmitter. Data yang diterima akan dibandingkan nilainya. Jika data bernilai 0 maka lampu LED akan mati, jika data yang diterima bernilai 255 maka lampu LED akan menyala.  
+3. Buatlah program pada Arduino yang berfungsi sebagai penerima data seperti berikut ini. Program berikut ini berfungsi untuk menerima data dari transmitter. Data yang diterima akan dibandingkan nilainya. Jika data bernilai 100 maka lampu LED akan mati, jika data yang diterima bernilai 255 maka lampu LED akan menyala.  
    `#include <SoftwareSerial.h>`
 
    `#define LED 4`
 
-   `SoftwareSerial 485Receiver(3, 2);`
+   `SoftwareSerial _485Slave(3, 2);`
 
    `void setup() {`
 
-   `485Transmitter.begin(9600);`
+   `_485Slave.begin(9600);`
 
    `pinMode(LED, OUTPUT);`
 
@@ -72,9 +72,9 @@ Koneksi
 
    `void loop() {`
 
-   `if (485Receiver.available()) {`
+   `if (_485Slave.available()) {`
 
-   `unsigned char data = 485Receiver.read();`
+   `unsigned char data = _485Slave.read();`
 
    `if (data == 255) {`
 
@@ -82,7 +82,7 @@ Koneksi
 
    `}`
 
-   `else {`
+   `else if (data==100) {`
 
    `digitalWrite(LED, 0);`
 
@@ -105,7 +105,7 @@ Untuk melakukan percobaan komunikasi data melaui EIA-485 dibutuhkan beberapa mod
 3. [Modul Push Button](https://www.dfrobot.com/product-1098.html) 1 pcs
 4. [Modul LED](https://www.dfrobot.com/product-490.html) 1 pcs
 
-**Gambar Percobaan        
+**Gambar Percobaan          
 **![](/assets/Webp.net-resizeimage.jpg)
 
 Koneksi
@@ -164,55 +164,55 @@ Koneksi
    `}`
 
 3. Buatlah program pada Arduino slave seperti berikut ini. Program berikut ini berfungsi untuk menerima data dari arduino master. Kemudian jika data yang diterima bernilai 255 atau master ingin melakukan request data, maka Arduino slave akan meresponnya dengan mengirimkan data 100 jika button pada arduino slave tidak ditekan. Jika button ditekan data yang dikirimkan oleh arduino slave adalah 255.  
-   `#include <SoftwareSerial.h>   `
+   `#include <SoftwareSerial.h>`
 
-   `#define BUTTON 4   `
+   `#define BUTTON 4`
 
-   `SoftwareSerial _485Slave(3, 2);   `
+   `SoftwareSerial _485Slave(3, 2);`
 
-   `   void setup() {   `
+   `void setup() {`
 
-   `  _485Slave.begin(9600);   `
+   `_485Slave.begin(9600);`
 
-   `  pinMode(BUTTON, INPUT_PULLUP);   `
+   `pinMode(BUTTON, INPUT_PULLUP);`
 
-   `}   `
+   `}`
 
-   `   void loop() {   `
+   `void loop() {`
 
-   `  // Cek apakah ada data yang dikirimkan master   `
+   `// Cek apakah ada data yang dikirimkan master`
 
-   `  if(_485Slave.available()) {   `
+   `if(_485Slave.available()) {`
 
-   `    // Baca data dari master   `
+   `// Baca data dari master`
 
-   `    unsigned char dataFromMaster = _485Slave.read();   `
+   `unsigned char dataFromMaster = _485Slave.read();`
 
-   `    // Jika data dari master 255    `
+   `// Jika data dari master 255`
 
-   `    // Master request data   `
+   `// Master request data`
 
-   `    if(dataFromMaster == 255) {   `
+   `if(dataFromMaster == 255) {`
 
-   `      // Cek kondisi button   `
+   `// Cek kondisi button`
 
-   `      // Kirim data ke master   `
+   `// Kirim data ke master`
 
-   `      if(digitalRead(BUTTON)==LOW) {   `
+   `if(digitalRead(BUTTON)==LOW) {`
 
-   `        _485Slave.write(255);   `
+   `_485Slave.write(255);`
 
-   `      }   `
+   `}`
 
-   `      else{   `
+   `else{`
 
-   `        _485Slave.write(100);   `
+   `_485Slave.write(100);`
 
-   `      }   `
+   `}`
 
-   `    }   `
+   `}`
 
-   `  }   `
+   `}`
 
    `}`
 
