@@ -13,7 +13,7 @@ Untuk melakukan percobaan komunikasi data melaui EIA-485 dibutuhkan beberapa mod
 3. [Modul Push Button](https://www.dfrobot.com/product-1098.html) 1 pcs
 4. [Modul LED](https://www.dfrobot.com/product-490.html) 1 pcs
 
-**Gambar Percobaan                            
+**Gambar Percobaan                              
 **![](/assets/Webp.net-resizeimage.jpg)
 
 Koneksi
@@ -28,7 +28,7 @@ Koneksi
 1. Hubungkan semua modul seperti pada gambar percobaan diatas
 2. Buatlah program pada Arduino yang berfungsi sebagai pengirim seperti berikut ini. Program berikut ini berfungsi untuk mendeteksi penekanan tombol dan mengirimkan data ke receiver melalui EIA-485. Jika tombol ditekan, data yang dikirim adalah 255 dan jika tombol tidak ditekan data yang dikirimkan adalah 100.
 
-   ```
+   ```cpp
    #include <SoftwareSerial.h>
    #define BUTTON 4
 
@@ -51,7 +51,7 @@ Koneksi
 
 3. Buatlah program pada Arduino yang berfungsi sebagai penerima data seperti berikut ini. Program berikut ini berfungsi untuk menerima data dari transmitter. Data yang diterima akan dibandingkan nilainya. Jika data bernilai 100 maka lampu LED akan mati, jika data yang diterima bernilai 255 maka lampu LED akan menyala.
 
-   ```
+   ```cpp
    #include <SoftwareSerial.h>
    #define LED 4
 
@@ -90,7 +90,7 @@ Untuk melakukan percobaan komunikasi data melaui EIA-485 dibutuhkan beberapa mod
 3. [Modul Push Button](https://www.dfrobot.com/product-1098.html) 1 pcs
 4. [Modul LED](https://www.dfrobot.com/product-490.html) 1 pcs
 
-**Gambar Percobaan                            
+**Gambar Percobaan                              
 **![](/assets/Webp.net-resizeimage.jpg)
 
 Koneksi
@@ -105,7 +105,7 @@ Koneksi
 1. Hubungkan semua modul seperti pada gambar percobaan diatas
 2. Buatlah program pada Arduino yang berfungsi sebagai master seperti berikut ini. Program berikut ini berfungsi untuk mengirim data 255 ke arduino slave sebagai petanda bahwa arduino master ingin membaca data pada arduino slave. Jika data yang di request telah dikirimkan oleh arduino slave maka arduino master akan menerima data tersebut dan membandingkan nilai datanya. Jika data yang diterima dari arduino slave adalah 255 maka arduino master akan menyalakan LED. Namun jika data yang diterima dari arduino slave adalah 100 maka arduino master akan mematikan LED.
 
-   ```
+   ```cpp
    #include <SoftwareSerial.h>
    #define LED 4
 
@@ -135,7 +135,7 @@ Koneksi
 
 3. Buatlah program pada Arduino slave seperti berikut ini. Program berikut ini berfungsi untuk menerima data dari arduino master. Kemudian jika data yang diterima bernilai 255 atau master ingin melakukan request data, maka Arduino slave akan meresponnya dengan mengirimkan data 100 jika button pada arduino slave tidak ditekan. Jika button ditekan data yang dikirimkan oleh arduino slave adalah 255.
 
-   ```
+   ```cpp
    #include <SoftwareSerial.h>
    #define BUTTON 4
 
@@ -189,7 +189,7 @@ Tabel Definisi Data pada Slave
 
 Contoh format data yang dikirimkan master ke Slave1 untuk menyalakan LED
 
-```
+```cpp
 // Kirim address terlebih dahulu 
 // Address Slave1 = 1
 _485Master.write(1); 
@@ -215,14 +215,27 @@ Koneksi
 3. Modul Button ke pin 4 dan 5 Arduino Master
 4. Modul LED masing-masing dihubungkan ke pin 4 Arduino Slave1 dan Slave2
 
-**Langkah Percobaan**
+Langkah Percobaan
 
 1. Hubungkan semua modul seperti pada gambar percobaan diatas
+
 2. Buatlah program pada Arduino master yang berfungsi untuk mendeteksi penekanan tombol dan mengirimkan data ke slave secara broadcast. Tombol pada pin 4 berfungsi untuk menyalakan LED pada Slave 1 dan button pada pin 5 berfungsi untuk menyalakan LED pada Slave2. Data yang akan dikirimkan sesuai dengan format data yang telah dijelaskan diatas.
+
+   ```cpp
+   #asdasd
+   ```
 
 3. Buatlah program pada Arduino Slave 1 yang berfungsi untuk merespon data dari master jika address yang dikirimkan master sesuai dengan address yang telah didefinisikan pada Slave 1.Respon data berupa kondisi LED yang nyala jika data = 200 dan LED yang mati jika data = 100
 
+   ```cpp
+
+   ```
+
 4. Buatlah program pada Arduino Slave 2 dengan program yang sama dengan Slave 1, namun definisi address berbeda
+
+   ```cpp
+
+   ```
 
 5. Lakukan ujicoba dengan melakukan penekanan tombol pada master dan perhatikan kondisi LED pada kedua Slave. Pastikan hasilnya sesuai dengan yang telah dideskripsikan di atas.
 
