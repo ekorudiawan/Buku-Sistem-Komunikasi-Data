@@ -13,7 +13,7 @@ Untuk melakukan percobaan komunikasi data melaui EIA-485 dibutuhkan beberapa mod
 3. [Modul Push Button](https://www.dfrobot.com/product-1098.html) 1 pcs
 4. [Modul LED](https://www.dfrobot.com/product-490.html) 1 pcs
 
-**Gambar Percobaan            
+**Gambar Percobaan                
 **![](/assets/Webp.net-resizeimage.jpg)
 
 Koneksi
@@ -26,73 +26,54 @@ Koneksi
 **Langkah Percobaan**
 
 1. Hubungkan semua modul seperti pada gambar percobaan diatas
-2. Buatlah program pada Arduino yang berfungsi sebagai pengirim seperti berikut ini. Program berikut ini berfungsi untuk mendeteksi penekanan tombol dan mengirimkan data ke receiver melalui EIA-485. Jika tombol ditekan, data yang dikirim adalah 255 dan jika tombol tidak ditekan data yang dikirimkan adalah 100.  
-   `#include <SoftwareSerial.h>`
+2. Buatlah program pada Arduino yang berfungsi sebagai pengirim seperti berikut ini. Program berikut ini berfungsi untuk mendeteksi penekanan tombol dan mengirimkan data ke receiver melalui EIA-485. Jika tombol ditekan, data yang dikirim adalah 255 dan jika tombol tidak ditekan data yang dikirimkan adalah 100.
 
-   `#define BUTTON 4`
+   ```
+   #include <SoftwareSerial.h>
+   #define BUTTON 4
 
-   `SoftwareSerial _485Master(3, 2);`
+   SoftwareSerial _485Master(3, 2);
 
-   `void setup() {`
+   void setup() {
+     _485Master.begin(9600);
+     pinMode(BUTTON, INPUT_PULLUP);
+   }
 
-   `_485Master.begin(9600);`
+   void loop() {
+     if (digitalRead(BUTTON) == LOW) {
+       _485Master.write(255);
+     }
+     else {
+       _485Master.write(100);
+     }
+   }
+   ```
 
-   `pinMode(BUTTON, INPUT_PULLUP);`
+3. Buatlah program pada Arduino yang berfungsi sebagai penerima data seperti berikut ini. Program berikut ini berfungsi untuk menerima data dari transmitter. Data yang diterima akan dibandingkan nilainya. Jika data bernilai 100 maka lampu LED akan mati, jika data yang diterima bernilai 255 maka lampu LED akan menyala.
 
-   `}`
+   ```
+   #include <SoftwareSerial.h>
+   #define LED 4
 
-   `void loop() {`
+   SoftwareSerial _485Slave(3, 2);
 
-   `if (digitalRead(BUTTON) == LOW) {`
+   void setup() {
+     _485Slave.begin(9600);
+     pinMode(LED, OUTPUT);
+   }
 
-   `_485Master.write(255);`
-
-   `}`
-
-   `else {`
-
-   `_485Master.write(100);`
-
-   `}`
-
-   `}`
-
-3. Buatlah program pada Arduino yang berfungsi sebagai penerima data seperti berikut ini. Program berikut ini berfungsi untuk menerima data dari transmitter. Data yang diterima akan dibandingkan nilainya. Jika data bernilai 100 maka lampu LED akan mati, jika data yang diterima bernilai 255 maka lampu LED akan menyala.  
-   `#include <SoftwareSerial.h>`
-
-   `#define LED 4`
-
-   `SoftwareSerial _485Slave(3, 2);`
-
-   `void setup() {`
-
-   `_485Slave.begin(9600);`
-
-   `pinMode(LED, OUTPUT);`
-
-   `}`
-
-   `void loop() {`
-
-   `if (_485Slave.available()) {`
-
-   `unsigned char data = _485Slave.read();`
-
-   `if (data == 255) {`
-
-   `digitalWrite(LED, 1);`
-
-   `}`
-
-   `else if (data==100) {`
-
-   `digitalWrite(LED, 0);`
-
-   `}`
-
-   `}`
-
-   `}`
+   void loop() {
+     if (_485Slave.available()) {
+       unsigned char data = _485Slave.read();
+       if (data == 255) {
+         digitalWrite(LED, 1);
+       }
+       else {
+         digitalWrite(LED, 0);
+       }
+     }
+   }
+   ```
 
 4. Lakukan uji coba dengan melakukan penekanan tombol pada arduino transmitter kemudian perhatikan nyala LED pada arduino receiver.
 
@@ -109,7 +90,7 @@ Untuk melakukan percobaan komunikasi data melaui EIA-485 dibutuhkan beberapa mod
 3. [Modul Push Button](https://www.dfrobot.com/product-1098.html) 1 pcs
 4. [Modul LED](https://www.dfrobot.com/product-490.html) 1 pcs
 
-**Gambar Percobaan            
+**Gambar Percobaan                
 **![](/assets/Webp.net-resizeimage.jpg)
 
 Koneksi
