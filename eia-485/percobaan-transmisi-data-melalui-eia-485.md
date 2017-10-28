@@ -13,7 +13,7 @@ Untuk melakukan percobaan komunikasi data melaui EIA-485 dibutuhkan beberapa mod
 3. [Modul Push Button](https://www.dfrobot.com/product-1098.html) 1 pcs
 4. [Modul LED](https://www.dfrobot.com/product-490.html) 1 pcs
 
-**Gambar Percobaan                          
+**Gambar Percobaan                            
 **![](/assets/Webp.net-resizeimage.jpg)
 
 Koneksi
@@ -90,7 +90,7 @@ Untuk melakukan percobaan komunikasi data melaui EIA-485 dibutuhkan beberapa mod
 3. [Modul Push Button](https://www.dfrobot.com/product-1098.html) 1 pcs
 4. [Modul LED](https://www.dfrobot.com/product-490.html) 1 pcs
 
-**Gambar Percobaan                          
+**Gambar Percobaan                            
 **![](/assets/Webp.net-resizeimage.jpg)
 
 Koneksi
@@ -173,7 +173,7 @@ Koneksi
 
 Percobaan kali ini merupakan pengembangan dari percobaan pertama. Pada percobaan kali ini perangkat yang terhubung dan saling bertukar data ada tiga \[erangkat. Satu perangkat berfungsi sebagai master dan dua perangkat lainnya berfungsi sebagai slave. Master dihubungkan dengan dua push button dan masing-masing slave dihubungkan dengan satu LED. Pada percobaan kali ini master akan mengirimkan data ke kedua slave tersebut. Data yang dikirimkan akan disertai dengan informasi address yang merupakan data 1 byte yang berisi address dari masing-masing slave. Selain address, master juga akan mengirimkan 1 byte data yang merupakan data untuk menyalakan LED pada masing-masing slave. Sehingga dalam sekali pengiriman, 2 byte data akan dikirimkan master ke semua slave secara broadcast. Slave akan merespon data yang dikirimkan oleh master dengan melakukan pengecekan terlebih dahulu terhadap nilai address. Jika nilai address sesuai dengan yang telah di definisikan pada slave maka data akan diproses oleh slave tersebut. Namun jika ternyata address tidak sesuai dengan yang telah didefinisikan pada slave, data akan diabaikan dan tidak akan diproses. Untuk infomasi tentang address dan data pada percobaan kali ini silahkan lihat tabel berikut
 
-Tabel Definisi Address pada Slave 
+Tabel Definisi Address pada Slave
 
 | Perangkat Slave | Address |
 | :--- | :--- |
@@ -218,6 +218,13 @@ Koneksi
 **Langkah Percobaan**
 
 1. Hubungkan semua modul seperti pada gambar percobaan diatas
-2. 
+2. Buatlah program pada Arduino master yang berfungsi untuk mendeteksi penekanan tombol dan mengirimkan data ke slave secara broadcast. Tombol pada pin 4 berfungsi untuk menyalakan LED pada Slave 1 dan button pada pin 5 berfungsi untuk menyalakan LED pada Slave2. Data yang akan dikirimkan sesuai dengan format data yang telah dijelaskan diatas.
+
+3. Buatlah program pada Arduino Slave 1 yang berfungsi untuk merespon data dari master jika address yang dikirimkan master sesuai dengan address yang telah didefinisikan pada Slave 1.Respon data berupa kondisi LED yang nyala jika data = 200 dan LED yang mati jika data = 100
+
+4. Buatlah program pada Arduino Slave 2 dengan program yang sama dengan Slave 1, namun definisi address berbeda
+
+5. Lakukan ujicoba dengan melakukan penekanan tombol pada master dan perhatikan kondisi LED pada kedua Slave. Pastikan hasilnya sesuai dengan yang telah dideskripsikan di atas.
+
 
 
