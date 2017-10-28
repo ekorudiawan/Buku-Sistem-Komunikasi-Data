@@ -2,6 +2,8 @@
 
 ### 2.4.1 Master Mengirim Data Ke Slave
 
+Percobaan kali ini bertujuan untuk mengaplikasikan pengriman data melalui EIA-485. Perangkat yang digunakan adalah mikrokontroler dengan tambahan driver EIA-485. Perangkat yang akan dihubungkan sebanyak dua perangkat. Satu perangkat bertindak sebagai master atau pengendali komunikasi data. Satu perangkat lagi bertindak sebagai slave. Master akan dihubungkan dengan tombol push button dan slave akan dihubungkan dengan LED. Master akan mengirimkan data 1 byte yang bernilai 100 atau 255 tergantung dari kondisi tombol. Jika tombol ditekan master akan mengirimkan data 255, namun jika tombol tidak ditekan master akan mengirimkan data 100. Slave akan merespon pengiriman data ini dengan menyalakan LED jika data yang diterima slave 255 dan akan mematikan LED jika data yang diterima slave 100.
+
 **Kebutuhan Komponen**
 
 Untuk melakukan percobaan komunikasi data melaui EIA-485 dibutuhkan beberapa modul komponen berikut ini :
@@ -11,7 +13,7 @@ Untuk melakukan percobaan komunikasi data melaui EIA-485 dibutuhkan beberapa mod
 3. [Modul Push Button](https://www.dfrobot.com/product-1098.html) 1 pcs
 4. [Modul LED](https://www.dfrobot.com/product-490.html) 1 pcs
 
-**Gambar Percobaan          
+**Gambar Percobaan            
 **![](/assets/Webp.net-resizeimage.jpg)
 
 Koneksi
@@ -96,6 +98,8 @@ Koneksi
 
 ### 2.4.2 Master Request Data Ke Slave
 
+Percobaan kali ini masih menggunakan perangkat yang sama seperti percobaan sebelumnya. Namun pada percobaan kali ini tombol push button dihubungkan pada slave dan LED dihubungkan pada master. Proses komunikasi data sedikit berbeda dengan percobaan yang pertama. Pada percobaan kali ini master akan melakukan request data ke slave dengan cara mengirimkan data terlebih dahulu ke slave. Nilai data yang akan dikirimkan ke slave untuk merequest data adalah 255. Slave akan merespon permintaan request data dari master. Kemudian slave akan mengirimkan data yang direquest oleh master. Data yang dikirimkan oleh slave nilainya tergantung dari kondisi penekanan tombol pada slave. Jika tombol ditekan slave akan mengirimkan data 255 dan ketika tombol tidak ditekan slave akan mengirimkan data 100. Master akan merespon data yang telah dikirimkan oleh slave atas request sebelumnya. Master akan membandingkan nilai data tersebut. Jika data bernilai 255 maka master akan menyalakan LED dan jika data yang diterima adalah 100 maka master akan mematikan LED.
+
 **Kebutuhan Komponen**
 
 Untuk melakukan percobaan komunikasi data melaui EIA-485 dibutuhkan beberapa modul komponen berikut ini :
@@ -105,7 +109,7 @@ Untuk melakukan percobaan komunikasi data melaui EIA-485 dibutuhkan beberapa mod
 3. [Modul Push Button](https://www.dfrobot.com/product-1098.html) 1 pcs
 4. [Modul LED](https://www.dfrobot.com/product-490.html) 1 pcs
 
-**Gambar Percobaan          
+**Gambar Percobaan            
 **![](/assets/Webp.net-resizeimage.jpg)
 
 Koneksi
