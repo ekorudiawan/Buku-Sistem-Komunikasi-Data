@@ -1,6 +1,8 @@
 ## 1.1 Karakteristik Sinyal EIA-232
 
-EIA-232 memiliki karakteristik sinyal sebagai berikut :
+Pengiriman data dan penerimaan data pada EIA-232 menggunakan jalur yang berbeda \(transmitted data dan received data\). Dimana jalur data tersebut memiliki karakteristik sinyal khusus pada saat mengirimkan sinyal digital. 
+
+Karakteristik sinyal yang dimiliki oleh EIA-232 adalah sebagai berikut :
 
 **Transmitter :**
 
@@ -14,7 +16,7 @@ EIA-232 memiliki karakteristik sinyal sebagai berikut :
 2. Logika 0 : +3 Volt sampai +25 Volt
 3. Tidak Terdefinisikan : -3 Volt sampai +3 Volt
 
-EIA-232 membutuhkan level tegangan yang cukup besar -25 Volt sampai +25 Volt untuk merepresentasikan logika 0 dan 1. Hal ini bertujuan untuk mengurangi tengangan drop jika kabel yang digunakan untuk pengiriman data cukup panjang. Pada umumnya level tegangan logika yang digunakan pada mikroprosesor adalah 0 Volt sampai +5 Volt atau biasanya disebut dengan level tegangan TTL \(Transistor Transistor Logic\). Level tegangan tersebut harus dikonversi menjadi -25 Volt sampai +25 Volt agar dapat dihubungkan dengan perangkat standar EIA-232. Pengkonversian level tegangan dapat dilakukan dengan cara menambahkan IC driver standar EIA-232 contohnya IC MAX232. Gambar 2 berikut menjelaskan tentang koneksi minimal yang dapat digunakan untuk menghubungkan perangkat yang memiliki standar EIA-232.
+EIA-232 membutuhkan level tegangan yang cukup besar -25 Volt sampai +25 Volt untuk merepresentasikan data biner 0 dan 1. Hal ini bertujuan untuk mengurangi tengangan drop jika kabel yang digunakan untuk pengiriman data cukup panjang. Pada umumnya level tegangan logika yang digunakan pada mikroprosesor adalah 0 Volt sampai +5 Volt atau biasanya disebut dengan level tegangan TTL \(Transistor Transistor Logic\). Level tegangan tersebut harus dikonversi menjadi -25 Volt sampai +25 Volt agar dapat dihubungkan dengan perangkat standar EIA-232. Pengkonversian level tegangan dapat dilakukan dengan cara menambahkan IC driver standar EIA-232 contohnya IC MAX232. Gambar 2 berikut menjelaskan tentang koneksi minimal yang dapat digunakan untuk menghubungkan perangkat yang memiliki standar EIA-232.
 
 ![](/assets/2017-10-25_115015.png)Gambar 2. Koneksi DTE dan DCE yang Dihubungkan Melalui EIA-232
 
