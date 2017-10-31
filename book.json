@@ -2,7 +2,7 @@
     "plugins": ["disqus"],
     "pluginsConfig": {
         "disqus": {
-            "shortName": "https://disqus.com/by/ekorudiawan/"
+            "shortName": "ekorudiawan.disqus.com"
         }
     }
 }
