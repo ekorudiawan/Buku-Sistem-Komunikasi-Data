@@ -13,7 +13,7 @@ Untuk melakukan percobaan komunikasi data melaui EIA-485 dibutuhkan beberapa mod
 3. [Modul Push Button](https://www.dfrobot.com/product-1098.html) 1 pcs
 4. [Modul LED](https://www.dfrobot.com/product-490.html) 1 pcs
 
-**Gambar Percobaan                                    
+**Gambar Percobaan                                      
 **![](/assets/Webp.net-resizeimage.jpg)
 
 Koneksi
@@ -90,8 +90,8 @@ Untuk melakukan percobaan komunikasi data melaui EIA-485 dibutuhkan beberapa mod
 3. [Modul Push Button](https://www.dfrobot.com/product-1098.html) 1 pcs
 4. [Modul LED](https://www.dfrobot.com/product-490.html) 1 pcs
 
-**Gambar Percobaan                                    
-**![](/assets/Webp.net-resizeimage.jpg)
+**Gambar Percobaan                                      
+**Sama dengan percobaan sebelumnya
 
 Koneksi
 
@@ -296,7 +296,7 @@ Langkah Percobaan
 
 #### Tugas
 
-Buatlah sistem komunikasi data menggunakan EIA-485 dimana terdapat tiga perangkat yang saling berkomunikasi. Satu perangkat bertindak sebagai master dan yang lainnya sebagai slave. Perangkat master terhubung ke dua buah LED pada pin 4 dan pin 5. Pada masing-masing perangkat slave terhubung satu buah push button. Mode komunikasi data yang digunakan adalah half-duplex dimana master akan melakukan request data dari kedua perangkat slave. Request data dilakukan dengan cara mengirim data 50 diikuti dengan address dari slave yang dituju. Request data dilakukan secara broadcast. Slave yang memiliki address yang sama dengan yang address yang dikirimkan master akan merespon dengan mengirimkan informasi data push button. Format data yang dikirimkan slave terdiri dari 2 byte data, byte pertama berisi address dari slave yang mengirimkan data. Byte kedua berisi data kondisi button. Setelah slave mengirimkan data yang direquest master, master akan menerima data tersebut dan data tersebut akan digunakan untuk meng-update kondisi LED pada pin 4 dan pin 5. LED pada pin 4 menunjukkan data dari slave 1 dan LED pada pin 5 menunjukkan data dari slave 2. 
+Buatlah sistem komunikasi data menggunakan EIA-485 dimana terdapat tiga perangkat yang saling berkomunikasi. Satu perangkat bertindak sebagai master dan yang lainnya sebagai slave. Perangkat master terhubung ke dua buah LED pada pin 4 dan pin 5. Pada masing-masing perangkat slave terhubung satu buah push button. Mode komunikasi data yang digunakan adalah half-duplex dimana master akan melakukan request data dari kedua perangkat slave. Request data dilakukan dengan cara mengirim data 50 diikuti dengan address dari slave yang dituju. Request data dilakukan secara broadcast. Slave yang memiliki address yang sama dengan yang address yang dikirimkan master akan merespon dengan mengirimkan informasi data push button. Format data yang dikirimkan slave terdiri dari 2 byte data, byte pertama berisi address dari slave yang mengirimkan data. Byte kedua berisi data kondisi button. Setelah slave mengirimkan data yang direquest master, master akan menerima data tersebut dan data tersebut akan digunakan untuk meng-update kondisi LED pada pin 4 dan pin 5. LED pada pin 4 menunjukkan data dari slave 1 dan LED pada pin 5 menunjukkan data dari slave 2.
 
 Contoh format data yang dikirimkan master ke slave1 untuk merequest data
 
@@ -315,10 +315,6 @@ _485Slave.write(1);
 // Kemudian kirim data (sesuai kondisi button)
 _485Slave.write(20);
 ```
-
-
-
-
 
 
 
