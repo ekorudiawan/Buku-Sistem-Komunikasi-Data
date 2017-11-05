@@ -46,6 +46,12 @@ Data frame digunakan ketika sebuah node atau perangkat ingin mengirimkan data ke
 
 ### 3.2.2 Remote Frame
 
+Remote frame merupakan frame yang digunakan untuk melakukan request data. Umumnya pada komunikasi CAN Bus tiap node masing-masing node akan melakukan pengiriman data tanpa adanya permintaan terlebih dahulu. Proses pengiriman data seperti ini wajib menggunakan data frame. Selain itu bisa juga terjadi proses pengiriman data atas permintaan node lain. Proses meminta data ini mewajibkan menggunakan format remote frame. Perbedaan remote frame dengan data frame adalah sebagai berikut :
+
+1. Pada remote frame sinyal RTR selalu bernilai recessive. Pada data frame sinyal RTR selalu bernilai dominant
+2. Pada remote frame tidak terdapat data bit. Pada data frame pasti terdapat data bit
+3. Pada remote frame sinyal DLC berfungsi untuk menentukan ukuran data yang akan di request. Sedangkan pada data frame sinyal DLC menentukan ukuran data yang akan dikirim
+
 ### 3.2.3 Error Frame
 
 ### 3.2.4 Overload Frame
