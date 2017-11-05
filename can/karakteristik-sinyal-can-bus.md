@@ -7,11 +7,11 @@ Terdapat dua standar sinyal pada CAN Bus yaitu standar **ISO 11898-2 **atau lebi
 ### 3.1.1 High Speed CAN Bus
 
 High Speed CAN Bus menggunakan topologi jaringan model linear bus. Dimana semua perangkat akan terkoneksi dalam sebuah jaringan yang memiliki dua buah titik akhir \(endpoint\). Semua perangkat akan dihubungkan ke terminal CAN High dan CAN Low. Pada masing-masing endpoint akan dipasang resistor termination yang nilainya sebesar 120 ohm. Lebih jelasnya bisa dilihat pada gambar berikut ini :  
-![](/assets/CAN_ISO11898-2_Network.png) 
+![](/assets/CAN_ISO11898-2_Network.png)
 
 Karakteristik sinyal pada high speed CAN bus dapat dilihat di bawah ini :
 
-1. Recessive \(high . 1\) terjadi jika perbedaan tegangan pada terminal CAN High dan CAN Low antara -0.1 volt sampai +0.5 volt
+1. Recessive \(high / 1\) terjadi jika perbedaan tegangan pada terminal CAN High dan CAN Low antara -0.1 volt sampai +0.5 volt
 2. Dominant \(low / 0\) terjadi jika perbedaan tegangan pada terminal CAN High dan CAN Low antara +0.9 volt sampai +5 volt
 
 ![](/assets/2017-11-05_210341.png)
@@ -19,6 +19,14 @@ Karakteristik sinyal pada high speed CAN bus dapat dilihat di bawah ini :
 ![](/assets/ISO11898-2.svg)
 
 ### 3.1.2 Low Speed CAN Bus
+
+Low Speed CAN Bus menggunakan topologi jaringan linear bus, star bus atau gabungan dari star bus dan linear bus. Pada masing-masing node digunakan termination resistor sebesar 100 ohm pada terminal CAN High dan CAN Low. Termination resistor terpasang pada masing-masing node, tidak seperti pada high speed CAN bus yang hanya terpasang pada endpoint saja. Lebih jelasnya dapat dilihat pada topologi jaringan gabungan dari star dan linear bus.  
+![](/assets/CAN_ISO11898-3_Network.png)Karakteristik sinyal pada low speed CAN bus dapat dilihat seperti ini :
+
+1. Recessive \(high / 1\) terjadi jika perbedaan tegangan pada terminal CAN High dan CAN Low kurang dari +0.6 volt
+2. Dominant \(low / 0\) terjadi jika perbedaan tegangan pada terminal CAN High dan CAN Low antara +2.3 volt sampai +5 volt
+
+![](/assets/ISO11898-3_Waveform.svg)
 
 
 
