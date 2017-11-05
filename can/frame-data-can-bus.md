@@ -13,21 +13,36 @@ Data frame digunakan ketika sebuah node atau perangkat ingin mengirimkan data ke
 | Nama Signal | Ukuran \(bit\) | Fungsi | Nilai |
 | :--- | :--- | :--- | :--- |
 | Start Frame | 1 | Sinyal penanda akan dilakukan transmisi data | Dominant \(Low\) |
-| ID \(Identifier\) | 11 | ID unik dari masing-masing perangkat yang merepresentasikan prioritas dari data yang akan dikirim | Tergantung ID dari node |
+| ID \(Identifier\) \(warna hijau\) | 11 | ID unik dari masing-masing perangkat yang merepresentasikan prioritas dari data yang akan dikirim | Tergantung ID dari node |
 | Remote transmission request \(RTR\) | 1 | Sinyal untuk mengirim data atau melakukan request data | Dominant \(low\) untuk data frame \(node mengirimkan data\) |
 | Identifier extension bit \(IDE\) | 1 | Sinyal penanda menggunakan 11 bit ID \(CAN 2.0 A\) atau 29 bit ID \(CAN 2.0 B\) | Dominant \(low\) untuk 11 bit ID \(CAN 2.0 B\) |
 | Reserved bit \(r0\) | 1 | Bit data cadangan, saat ini belum digunakan | Dominant \(low\) |
-| Data length code \(DLC\) \(yellow\) | 4 | Panjang data yang akan ditransmisikan  | Tergantung panjang data yang akan ditransmisikan \(0-8\) |
-| Data field \(red\) | 0-64 | Data yang akan ditransmisikan | Tergantung data yang akan dikirim |
+| Data length code \(DLC\) \(warna kuning\) | 4 | Panjang data yang akan ditransmisikan | Tergantung panjang data yang akan ditransmisikan \(0-8\) |
+| Data field \(warna merah\) | 0-64 | Data yang akan ditransmisikan | Tergantung data yang akan dikirim |
 | CRC | 15 | Sinyal yang digunakan untuk melakukan pengecekan error | Tergantung hasil perhitungan CRC |
 | CRC delimiter | 1 | Sinyal pembatas CRC | Recessive \(high\) |
 | ACK slot | 1 | Sinyal perrnyataan bahwa transmisi data telah selesai | Node transitter akan mengirimkan sinyal recessive. Sedangkan node receiver akan mengirimkan sinyal dominant |
 | ACK delimiter | 1 | Sinyal pembatas ACK | Recessive \(high\) |
 | End-of-frame \(EOF\) | 7 | Sinyal petanda bahwa transmisi data sudah complete | Recessive sebanyak 7 bit data |
 
-#### Data Frame CAN 2.0 B 
+#### Data Frame CAN 2.0 B
 
-
+| Nama Signal | Ukuran \(bit\) | Fungsi | Nilai |
+| :--- | :--- | :--- | :--- |
+| Start Frame | 1 | Sinyal penanda akan dilakukan transmisi data | Dominant \(Low\) |
+| ID \(Identifier\) \(warna hijau\) | 11 | ID unik dari masing-masing perangkat yang merepresentasikan prioritas dari data yang akan dikirim \(11 bit pertama\) | Tergantung ID dari node |
+| Substitute remote request \(SRR\) | 1 |  | Recessive |
+| Identifier extension bit \(IDE\) | 1 | Sinyal penanda menggunakan 11 bit ID \(CAN 2.0 A\) atau 29 bit ID \(CAN 2.0 B\) | Recessive untuk 29 bit ID \(CAN 2.0B\) |
+| ID \(Identifier\) \(warna hijau\) | 18 | ID unik dari masing-masing perangkat yang merepresentasikan prioritas dari data yang akan dikirim \(18 bit kedua\) | Tergantung ID dari node |
+| Remote transmission request \(RTR\) | 1 | Sinyal untuk mengirim data atau melakukan request data | Dominant \(low\) untuk data frame \(node mengirimkan data\) |
+| Reserved bit \(r1, r0\) | 2 | Bit data cadangan, saat ini belum digunakan | Dominant \(low\) |
+| Data length code \(DLC\) \(warna kuning\) | 4 | Panjang data yang akan ditransmisikan | Tergantung panjang data yang akan ditransmisikan \(0-8\) |
+| Data field \(warna merah\) | 0-64 | Data yang akan ditransmisikan | Tergantung data yang akan dikirim |
+| CRC | 15 | Sinyal yang digunakan untuk melakukan pengecekan error | Tergantung hasil perhitungan CRC |
+| CRC delimiter | 1 | Sinyal pembatas CRC | Recessive \(high\) |
+| ACK slot | 1 | Sinyal perrnyataan bahwa transmisi data telah selesai | Node transitter akan mengirimkan sinyal recessive. Sedangkan node receiver akan mengirimkan sinyal dominant |
+| ACK delimiter | 1 | Sinyal pembatas ACK | Recessive \(high\) |
+| End-of-frame \(EOF\) | 7 | Sinyal petanda bahwa transmisi data sudah complete | Recessive sebanyak 7 bit data |
 
 ### 3.2.2 Remote Frame
 
