@@ -11,7 +11,7 @@ Data frame digunakan ketika sebuah node atau perangkat ingin mengirimkan data ke
 ![](/assets/CAN-Bus-frame_in_base_format_without_stuffbits.svg)
 
 | Nama Signal | Ukuran \(bit\) | Fungsi | Nilai |
-| :--- | :--- | :--- | :--- |
+| :---: | :---: | :---: | :---: |
 | Start Frame | 1 | Sinyal penanda akan dilakukan transmisi data | Dominant \(Low\) |
 | ID \(Identifier\) \(warna hijau\) | 11 | ID unik dari masing-masing perangkat yang merepresentasikan prioritas dari data yang akan dikirim | Tergantung ID dari node |
 | Remote transmission request \(RTR\) | 1 | Sinyal untuk mengirim data atau melakukan request data | Dominant \(low\) untuk data frame \(node mengirimkan data\) |
@@ -28,7 +28,7 @@ Data frame digunakan ketika sebuah node atau perangkat ingin mengirimkan data ke
 #### Data Frame CAN 2.0 B
 
 | Nama Signal | Ukuran \(bit\) | Fungsi | Nilai |
-| :--- | :--- | :--- | :--- |
+| :---: | :---: | :---: | :---: |
 | Start Frame | 1 | Sinyal penanda akan dilakukan transmisi data | Dominant \(Low\) |
 | ID \(Identifier\) \(warna hijau\) | 11 | ID unik dari masing-masing perangkat yang merepresentasikan prioritas dari data yang akan dikirim \(11 bit pertama\) | Tergantung ID dari node |
 | Substitute remote request \(SRR\) | 1 |  | Recessive |
@@ -50,11 +50,13 @@ Remote frame merupakan frame yang digunakan untuk melakukan request data. Umumny
 
 1. Pada remote frame sinyal RTR selalu bernilai recessive. Pada data frame sinyal RTR selalu bernilai dominant
 2. Pada remote frame tidak terdapat data bit. Pada data frame pasti terdapat data bit
-3. Pada remote frame sinyal DLC berfungsi untuk menentukan ukuran data yang akan di request. Sedangkan pada data frame sinyal DLC menentukan ukuran data yang akan dikirim
+3. Pada remote frame sinyal DLC berfungsi untuk menentukan ukuran data yang akan di request. Sedangkan pada data frame sinyal DLC menentukan ukuran data yang akan dikirim 
 
 ### 3.2.3 Error Frame
 
+Error frame merupakan sinyal yang dikirimkan jika terjadi error atau kesalahan pada proses transmisi data. Error frame terdiri dari sinyal error flag dan error delimiter. Error flag merupakan sinyal error itu sendiri, yang terdiri dari 6-12 bit sinyal recessive atau dominant. Sedangkan error delimiter merupakan sinyal yang dikirimkan setelah error flag, yang berfungsi sebagai petanda bahwa error flag telah dikirim. Sinyal error delimiter terdiri dari 8 bit sinyal dengan nilai recessive \(high\). Error frame akan dikirimkan oleh node jika node tersebut mendeteksi error pada CAN bus. 
+
 ### 3.2.4 Overload Frame
 
-
+Overload frame merupakan sinyal yang akan dikirimkan sebuah node jika node tersebut tidak mampu menampung data yang dikirimkan oleh node lain. Hal ini dapat terjadi karena terlalu cepatnya proses transfer data, sehingga node receiver tidak mampu mengolah data yang diterima atau disebut dengan overload. Ketika terjadi overload, node receiver dapat mengirimkan sinyal overload frame yang berfungsi untuk menginformasikan ke node transmitter agar proses pengiriman data diberi jeda waktu \(delay\). 
 
