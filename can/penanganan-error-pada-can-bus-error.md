@@ -24,7 +24,7 @@ Pada gambar di atas dapat dilihat bahwa normalnya frame data akan dikirimkan sep
 
 ### 3.4.4 ACK Signal
 
-Sinyal ACK 
+Sinyal ACK merupakan sinyal penanda bahwa tidak ada error pada saat pengiriman data. Sinyal ini akan dikirimkan oleh node transmitter dan receiver. Transmitter akan mengirimkan sinyal recessive pada bit ACK. Node receiver akan mengecek data yang diterima. Jika receiver tidak mendeteksi adanya error pada data maka node receiver akan mengirimkan sinyal dominant. Dimana sinyal dominant akan menggantikan sinyal recessive yang sebelumnya dikirim oleh transmitter. Ketika sinyal ACK bernilai dominant \(0\) ini berarti bahwa tidak ada kesalahan atau error pada saat transmisi data. Namun jika node receiver mendeteksi error maka akan mengirimkan sinyal recessive pada bit ACK. Hal ini menunjukkan bahwa ada kesalahan pada saat transmisi data. Jika dalam satu jaringan terdapat banyak node, semua node akan merespon dengan memberikan sinyal ACK tergantung data yang diterima pada masing-masing node error atau tidak. Jika ternyata hanya ada satu node yang mendeteksi error dan node lainnya tidak, maka transmitter akan menganggap tidak ada error. Transmitter akan mendeteksi error jika semua node memberikan sinyal recessive.
 
 
 
