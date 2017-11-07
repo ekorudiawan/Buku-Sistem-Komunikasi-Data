@@ -30,7 +30,11 @@ Sinyal ACK merupakan sinyal penanda bahwa tidak ada error pada saat pengiriman d
 
 Interframe spacing merupakan jarak pengiriman data antar frame. Interframe spacing berfungsi untuk memberikan jeda waktu antar pengiriman data. Interframe spacing membutuhkan minimal tiga bit recessive sebagai jarak antar frame.
 
-### 3.4.6 Cyclic Redundancy Check   
+### 3.4.6 Cyclic Redundancy Check
 
-CRC \(Cyclic Redundancy Check\) merupakan 15 bit sinyal yang digunakan untuk melakukan pengecekan error terhadap data yang dikirimkan. CRC tidak hanya digunakan pada CAN Bus tetapi digunakan juga pada protokol komunikasi data lainnya contohnya Modbus. 
+CRC \(Cyclic Redundancy Check\) merupakan 15 bit sinyal yang digunakan untuk melakukan pengecekan error terhadap data yang dikirimkan. CRC tidak hanya digunakan pada CAN Bus tetapi digunakan juga pada protokol komunikasi data lainnya contohnya Modbus.
+
+
+
+[CAN Bus 2.0 Spesification](/assets/CAN_Bus_2.0.pdf)
 

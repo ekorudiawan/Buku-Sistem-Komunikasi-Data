@@ -17,5 +17,6 @@
   * [Frame Data CAN BUS](can/frame-data-can-bus.md)
   * [Mode Operasi CAN Bus](can/mode-operasi-can-bus.md)
   * [Penanganan Error Pada CAN Bus Error ](can/penanganan-error-pada-can-bus-error.md)
+  * [Percobaan CAN Bus](can/percobaan-can-bus.md)
 * [Ethernet](ethernet.md)
 
