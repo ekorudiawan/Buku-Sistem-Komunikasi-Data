@@ -1,6 +1,6 @@
 ## 3.4 Penanganan Error Pada CAN Bus Error
 
-Salah satu kelebihan CAN Bus adalah pada kemampuannya untuk menangani error yang terjadi pada komunikasi data.
+Salah satu kelebihan CAN Bus adalah pada kemampuannya untuk menangani error yang terjadi pada komunikasi data. Proses penanganan error pada CAN Bus melibatkan beberapa proses di bawah ini.
 
 ### 3.4.1 Arbitration
 
@@ -28,13 +28,9 @@ Sinyal ACK merupakan sinyal penanda bahwa tidak ada error pada saat pengiriman d
 
 ### 3.4.5 Interframe Spacing
 
-Interframe spacing merupakan jarak pengiriman data antar frame. Interframe spacing berfungsi untuk memberikan jeda waktu antar pengiriman data. Interframe spacing membutuhkan minimal tiga bit recessive sebagai jarak antar frame.
+Interframe spacing merupakan jarak pengiriman data antar frame. Interframe spacing berfungsi untuk memberikan jeda waktu antar pengiriman data. Interframe spacing membutuhkan minimal tiga bit recessive sebagai jarak antar frame. Adanya interframe spacing dapat memberikan waktu bagi processor untuk menyimpan data yang sebelumnya dikirim sebelum adanya transmisi data yang baru.
 
 ### 3.4.6 Cyclic Redundancy Check
 
-CRC \(Cyclic Redundancy Check\) merupakan 15 bit sinyal yang digunakan untuk melakukan pengecekan error terhadap data yang dikirimkan. CRC tidak hanya digunakan pada CAN Bus tetapi digunakan juga pada protokol komunikasi data lainnya contohnya Modbus.
-
-
-
-[CAN Bus 2.0 Spesification](/assets/CAN_Bus_2.0.pdf)
+CRC \(Cyclic Redundancy Check\) merupakan 15 bit sinyal yang digunakan untuk melakukan pengecekan error terhadap data yang dikirimkan. CRC tidak hanya digunakan pada CAN Bus tetapi digunakan juga pada protokol komunikasi data lainnya contohnya Modbus. Bit CRC merupakan hasil perhitungan algoritma CRC dari data yang dikirimkan. Pada saat data diterima, data akan dibandingkan dengan nilai CRC-nya. Jika data dan nilai CRC-nya sesuai berarti tidak terjadi error pada saat pengiriman data. Namun, jika data dan nilai CRC-nya berbeda, maka bisa dipastikan data yang dikirimkan error.
 
