@@ -13,7 +13,7 @@ Untuk melakukan percobaan komunikasi data melaui EIA-485 dibutuhkan beberapa mod
 3. [Modul Push Button](https://www.dfrobot.com/product-1098.html) 1 pcs
 4. [Modul LED](https://www.dfrobot.com/product-490.html) 1 pcs
 
-**Gambar Percobaan                                        
+**Gambar Percobaan                                          
 **![](/assets/Webp.net-resizeimage.jpg)
 
 Koneksi
@@ -90,7 +90,7 @@ Untuk melakukan percobaan komunikasi data melaui EIA-485 dibutuhkan beberapa mod
 3. [Modul Push Button](https://www.dfrobot.com/product-1098.html) 1 pcs
 4. [Modul LED](https://www.dfrobot.com/product-490.html) 1 pcs
 
-**Gambar Percobaan                                        
+**Gambar Percobaan                                          
 **Sama dengan percobaan sebelumnya
 
 Koneksi
