@@ -144,7 +144,7 @@ Tambahkan satu node lagi pada jaringan CAN Bus. Node ketiga terhubung dengan pot
 
 ### 3.5.2 Komunikasi Dua Node Menggunakan Request
 
-Pada percobaan kali ini sistem komunikasi data yang digunakan menggunakan request data. Dengan menggunakan request data temperature sensor node tidak terus-menerus mengirimkan data. Request data akan dilakukan oleh display node terlebih dahulu dengan cara mengirimkan data 100. Kemudian temperature sensor node akan merespon dengan mengirimkan data yang di request jika ID dan format data request sesuai. Pada percobaan kali ini display node dan temperature sensor node harus dapat mengirimkan dan menerima data. 
+Pada percobaan kali ini sistem komunikasi data yang digunakan menggunakan request data. Dengan menggunakan request data temperature sensor node tidak terus-menerus mengirimkan data. Request data akan dilakukan oleh display node terlebih dahulu dengan cara mengirimkan data 100. Kemudian temperature sensor node akan merespon dengan mengirimkan data yang di request jika ID dan format data request sesuai. Pada percobaan kali ini display node dan temperature sensor node harus dapat mengirimkan dan menerima data.
 
 **Kebutuhan Komponen**
 
@@ -301,16 +301,17 @@ Untuk melakukan percobaan komunikasi data melalui CAN Bus dibutuhkan beberapa mo
      }
      delay(1000);
    }
-
    ```
 
-4. Lakukan percobaan diatas dengan cara melihat perubahan nilai data yang diterima display node pada serial monitor. 
+4. Lakukan percobaan diatas dengan cara melihat perubahan nilai data yang diterima display node pada serial monitor.
 
 #### Tugas 2.
 
 Tambahkan satu node lagi pada jaringan CAN Bus. Node ketiga terhubung dengan potensiometer yang dihubungkan pada pin A1 arduino. Diplay node akan melakukan request data pada kedua node tersebut. Node akan merespon jika request data ditujukan untuk ID-nya.
 
 #### Tugas 3.
+
+Terdapat dua buah node pada jaringan CAN Bus \(Node A dan Node B\). Kedua node tersebut terhubung dengan temperature sensor \(pin A0\) dan LED \(pin 13\). LED pada node A akan menyala jika temperature sensor pada node B melebihi 35 celcius. LED pada node B akan menyala jika temperature sensor pada node A melebihi 35 celcius. Kedua node saling berkomunikasi untuk bertukar data. Node A dan Node B harus dapat mengirim dan menerima data.  
 
 
 
