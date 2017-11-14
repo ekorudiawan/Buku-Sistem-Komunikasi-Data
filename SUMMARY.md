@@ -19,6 +19,6 @@
   * [Penanganan Error Pada CAN Bus Error ](can/penanganan-error-pada-can-bus-error.md)
   * [Percobaan CAN Bus](can/percobaan-can-bus.md)
 * [Ethernet](ethernet.md)
-  * Karakteristik Sinyal Ethernet
+  * [Karakteristik Sinyal Ethernet](ethernet/karakteristik-sinyal-ethernet.md)
   * Frame Data Ethernet
 
