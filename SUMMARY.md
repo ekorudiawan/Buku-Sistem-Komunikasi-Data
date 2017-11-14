@@ -20,5 +20,7 @@
   * [Percobaan CAN Bus](can/percobaan-can-bus.md)
 * [Ethernet](ethernet.md)
   * [Karakteristik Sinyal Ethernet](ethernet/karakteristik-sinyal-ethernet.md)
-  * Frame Data Ethernet
+  * [Frame Data Ethernet](ethernet/frame-data-ethernet.md)
+  * [Mode Operasi Ethernet](ethernet/mode-operasi-ethernet.md)
+  * [Protokol Komunikasi Data Ethernet](ethernet/protokol-komunikasi-data-ethernet.md)
 

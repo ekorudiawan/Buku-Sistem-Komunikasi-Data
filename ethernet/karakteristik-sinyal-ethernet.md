@@ -9,8 +9,7 @@ Sinyal pada komunikasi ethernet dengan standar IEEE 802.3 menggunakan pengkodean
 1. Sinyal high \(1\), merupakan transisi dari 0 ke 1
 2. Sinyal low \(0\), merupakan transisi dari 1 ke 0
 
-Untuk lebih jelasnya dapat dilihat pada Gambar berikut ini   
+Untuk lebih jelasnya dapat dilihat pada Gambar berikut ini  
+![](/assets/2017-11-14_094320.png)  
 ![](/assets/2017-11-14_093808.png)
-
-
 
