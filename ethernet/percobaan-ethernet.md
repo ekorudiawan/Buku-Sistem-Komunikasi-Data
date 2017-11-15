@@ -131,9 +131,10 @@ Untuk melakukan percobaan komunikasi data melalui ethernet1 dibutuhkan beberapa 
    ```
 
 3. asdasd
+
 4. asdasds
 
-### 4.5.2 Percobaan Menerima Data dengan UDP
+### 4.5.3 Percobaan Mengirim Data dengan TCP \(Arduino Server - PC Client\)
 
 Pada percobaan kali ini akan diuji coba pengiriman data melalui komunikasi ethernet menggunakan protokol UDP.
 
@@ -154,7 +155,7 @@ Untuk melakukan percobaan komunikasi data melalui ethernet1 dibutuhkan beberapa 
 
    ```
 
-### 4.5.2 Percobaan Menerima Data dengan UDP
+### 4.5.4 Percobaan Menerima Data dengan TCP \(Arduino Server - PC Client\)
 
 Pada percobaan kali ini akan diuji coba pengiriman data melalui komunikasi ethernet menggunakan protokol UDP.
 
@@ -175,7 +176,7 @@ Untuk melakukan percobaan komunikasi data melalui ethernet1 dibutuhkan beberapa 
 
    ```
 
-### 4.5.2 Percobaan Menerima Data dengan UDP
+### 4.5.5 Percobaan Mengirim Data dengan TCP \(Arduino Client - PC Server\)
 
 Pada percobaan kali ini akan diuji coba pengiriman data melalui komunikasi ethernet menggunakan protokol UDP.
 
@@ -196,7 +197,7 @@ Untuk melakukan percobaan komunikasi data melalui ethernet1 dibutuhkan beberapa 
 
    ```
 
-### 4.5.2 Percobaan Menerima Data dengan UDP
+### 4.5.6 Percobaan Menerima Data dengan TCP \(Arduino Client - PC Server\)
 
 Pada percobaan kali ini akan diuji coba pengiriman data melalui komunikasi ethernet menggunakan protokol UDP.
 
