@@ -24,4 +24,5 @@
   * [Mode Operasi Ethernet](ethernet/mode-operasi-ethernet.md)
   * [Protokol Komunikasi Data Ethernet](ethernet/protokol-komunikasi-data-ethernet.md)
   * [Percobaan Ethernet](ethernet/percobaan-ethernet.md)
+  * [Percobaan Komunikasi Ethernet](ethernet/percobaan-komunikasi-ethernet.md)
 
