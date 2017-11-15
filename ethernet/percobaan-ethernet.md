@@ -248,6 +248,39 @@ Untuk melakukan percobaan komunikasi data melalui ethernet1 dibutuhkan beberapa 
 
 1. Hubungkan Arduino dengan ethernet shield
 2. Buatlah program dibawah ini
+   ```cpp
+   #include <SPI.h>
+   #include <Ethernet.h>
+
+   byte mac[] = {
+     0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED
+   };
+
+   // Alamat IP Address Client (Arduino)
+   IPAddress ip(192, 168, 1, 177);
+
+   // Alamat IP Address server
+   IPAddress server(192, 168, 1, 2);
+
+   // Mendefinisikan arduino sebagai client
+   EthernetClient client;
+
+   void setup() {
+     Ethernet.begin(mac, ip);
+     // Client melakukan request koneksi ke server dengan IP Adreess dan port yg didefinisikan
+     client.connect(server, 7000);
+   }
+
+   void loop() {
+     // Mengirim data selama client masih terkoneksi dengan server
+     if (client.connected()) {
+       int randomData = random(0, 1000);
+       client.print("Sent from Arduino : ");
+       client.println(randomData);
+     }
+     delay(1000);
+   }
+   ```
 3. sdfsdfdsf
 
 ### 4.5.6 Percobaan Menerima Data dengan TCP \(Arduino Client - PC Server\)
@@ -266,6 +299,42 @@ Untuk melakukan percobaan komunikasi data melalui ethernet1 dibutuhkan beberapa 
 
 1. Hubungkan Arduino dengan ethernet shield
 2. Buatlah program dibawah ini
+
+   ```cpp
+   #include <SPI.h>
+   #include <Ethernet.h>
+
+   byte mac[] = {
+     0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED
+   };
+
+   // Alamat IP Address Client (Arduino)
+   IPAddress ip(192, 168, 1, 177);
+
+   // Alamat IP Address server
+   IPAddress server(192, 168, 1, 2);
+
+   // Mendefinisikan arduino sebagai client
+   EthernetClient client;
+
+   void setup() {
+     Ethernet.begin(mac, ip);
+     // Client melakukan request koneksi ke server dengan IP Adreess dan port yg didefinisikan
+     client.connect(server, 7000);
+     Serial.begin(9600);
+   }
+
+   void loop() {
+     if (client.connected()) {
+       // Jika ada paket data yang masuk ke client
+       if (client.available()) {
+         // Menerima paket data dan menampilkan ke serial
+         char c = client.read();
+         Serial.print(c);
+       }
+     }
+   }
+   ```
 
 3. sdfsdfsdf
 
