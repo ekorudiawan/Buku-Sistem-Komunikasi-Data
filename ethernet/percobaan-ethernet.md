@@ -150,6 +150,7 @@ Untuk melakukan percobaan komunikasi data melalui ethernet1 dibutuhkan beberapa 
 
 1. Hubungkan Arduino dengan ethernet shield
 2. Buatlah program dibawah ini
+
    ```cpp
    #include <SPI.h>
    #include <Ethernet.h>
@@ -177,6 +178,7 @@ Untuk melakukan percobaan komunikasi data melalui ethernet1 dibutuhkan beberapa 
      delay(1000);
    }
    ```
+
 3. sdfsdff
 
 ### 4.5.4 Percobaan Menerima Data dengan TCP \(Arduino Server - PC Client\)
@@ -196,7 +198,39 @@ Untuk melakukan percobaan komunikasi data melalui ethernet1 dibutuhkan beberapa 
 1. Hubungkan Arduino dengan ethernet shield
 2. Buatlah program dibawah ini
 
-1. sdfsdfsdf
+   ```cpp
+   #include <SPI.h>
+   #include <Ethernet.h>
+
+   byte mac[] = {
+     0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED
+   };
+
+   IPAddress ip(192, 168, 1, 177);
+
+   // Membuka akses port 23 untuk protokol TCP
+   EthernetServer server(23);
+
+   void setup() {
+     Ethernet.begin(mac, ip);
+     // Membuka koneksi dan menunggu koneksi dari client
+     server.begin();
+     Serial.begin(9600);
+   }
+
+   void loop() {
+     // Cek jika ada data yang dikirim client
+     EthernetClient client = server.available();
+     if (client) {
+       while (client.available() > 0) {
+         char thisChar = client.read();
+         Serial.write(thisChar);
+       }
+     }
+   }
+   ```
+
+3. sdfsdfsdf
 
 ### 4.5.5 Percobaan Mengirim Data dengan TCP \(Arduino Client - PC Server\)
 
@@ -233,7 +267,7 @@ Untuk melakukan percobaan komunikasi data melalui ethernet1 dibutuhkan beberapa 
 1. Hubungkan Arduino dengan ethernet shield
 2. Buatlah program dibawah ini
 
-1. sdfsdfsdf
+3. sdfsdfsdf
 
 
 
