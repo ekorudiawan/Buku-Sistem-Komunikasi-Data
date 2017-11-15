@@ -67,20 +67,20 @@ Untuk melakukan percobaan komunikasi data melalui ethernet dibutuhkan beberapa m
 
 ### 4.5.2 Percobaan Menerima Data dengan UDP
 
-Pada percobaan kali ini akan diuji coba pengiriman data melalui komunikasi ethernet menggunakan protokol UDP.
+Pada percobaan kali ini akan diuji coba penerimaan data melalui komunikasi ethernet menggunakan protokol UDP. Arduino akan membuka akses port 9000 sebagai jalur masuknya data. Data akan dikirimkan menggunakan aplikasi Hercules pada PC. Pengiriman data pada aplikasi Hercules ditujukan pada IP Addresss dan port yang digunakan Arduino.
 
 **Kebutuhan Komponen**
 
-Untuk melakukan percobaan komunikasi data melalui ethernet1 dibutuhkan beberapa modul komponen berikut ini :
+Untuk melakukan percobaan ini dibutuhkan beberapa modul komponen berikut ini :
 
 1. [Arduino Uno](https://store.arduino.cc/usa/arduino-uno-rev3) 1 pcs
-2. Ethernet Shield 2 pcs
+2. [Ethernet Shield](https://store.arduino.cc/usa/arduino-ethernet-shield-2) 1 pcs
 3. Kabel Ethernet  1 pcs
 
 **Langkah Percobaan**
 
 1. Hubungkan Arduino dengan ethernet shield
-2. Buatlah program dibawah ini
+2. Buatlah program dibawah ini, lakukan upload program dan koneksikan kabel ethernet ke arduino dan komputer.
 
    ```cpp
    #include <SPI.h>
@@ -134,20 +134,22 @@ Untuk melakukan percobaan komunikasi data melalui ethernet1 dibutuhkan beberapa 
    }
    ```
 
-3. asdasd
+3. Buka aplikasi Hercules dan lakukan akses terhadap port yang digunakan. Untuk mengirimkan data, isi textbox Send dengan text apapun. Kemudian klik Send untuk mengirimkan data  
+   ![](/assets/2017-11-15_103948.png)
 
-4. asdasds
+4. Untuk memastikan data yang dikirim dari PC menggunakan Hercules telah diterima Arduino, bukalah Serial Monitor pada Arduino. Data yang dikirim akan ditampilkan pada Serial Monitor Arduino beserta informasi IP Address pengirim dan port yang digunakan.  
+   ![](/assets/2017-11-15_103954.png)
 
 ### 4.5.3 Percobaan Mengirim Data dengan TCP \(Arduino Server - PC Client\)
 
-Pada percobaan kali ini akan diuji coba pengiriman data melalui komunikasi ethernet menggunakan protokol UDP.
+Pada percobaan kali ini akan diuji coba pengiriman data melalui komunikasi ethernet menggunakan protokol TCP. Pada percobaan kali ini Arduino akan menjadi server dan PC akan menjadi client. Port yang digunakan untuk komunikasi data adalah port 23. Arduino akan membuka koneksi dan menunggu request koneksi dari client. Jika client telah terkoneksi, Arduino akan mengirimkan data ke client tersebut.
 
 **Kebutuhan Komponen**
 
-Untuk melakukan percobaan komunikasi data melalui ethernet1 dibutuhkan beberapa modul komponen berikut ini :
+Untuk melakukan percobaan ini dibutuhkan beberapa modul komponen berikut ini :
 
 1. [Arduino Uno](https://store.arduino.cc/usa/arduino-uno-rev3) 1 pcs
-2. Ethernet Shield 2 pcs
+2. [Ethernet Shield](https://store.arduino.cc/usa/arduino-ethernet-shield-2) 1 pcs
 3. Kabel Ethernet  1 pcs
 
 **Langkah Percobaan**
@@ -183,18 +185,19 @@ Untuk melakukan percobaan komunikasi data melalui ethernet1 dibutuhkan beberapa 
    }
    ```
 
-3. sdfsdff
+3. Untuk melakukan ujicoba buka aplikasi Hercules, kemudian pilih tab TCP Client. Lakukan koneksi ke IP Address dan port server \(Arduino\).  
+   ![](/assets/2017-11-15_105258.png)
 
 ### 4.5.4 Percobaan Menerima Data dengan TCP \(Arduino Server - PC Client\)
 
-Pada percobaan kali ini akan diuji coba pengiriman data melalui komunikasi ethernet menggunakan protokol UDP.
+Pada percobaan kali ini akan di ujicoba penerimaan data pada Arduino yang berfungsi sebagai TCP Server. Data akan dikirimkan oleh client menggunakan software Hercules. Server akan melakukan pengecekan data dari client. Jika client memgirimkan data, data akan diterima dan ditampilkan ke Serial Monitor.
 
 **Kebutuhan Komponen**
 
 Untuk melakukan percobaan komunikasi data melalui ethernet1 dibutuhkan beberapa modul komponen berikut ini :
 
 1. [Arduino Uno](https://store.arduino.cc/usa/arduino-uno-rev3) 1 pcs
-2. Ethernet Shield 2 pcs
+2. [Ethernet Shield](https://store.arduino.cc/usa/arduino-ethernet-shield-2) 1 pcs
 3. Kabel Ethernet  1 pcs
 
 **Langkah Percobaan**
@@ -234,18 +237,22 @@ Untuk melakukan percobaan komunikasi data melalui ethernet1 dibutuhkan beberapa 
    }
    ```
 
-3. sdfsdfsdf
+3. Buka software Hercules dengan mode TCP Client. Lakukan percobaan untuk mengirim data dan perhatikan data yang diterima pada Serial Monitor.  
+   ![](/assets/2017-11-15_105922.png)
+
+4. Jika pengiriman data berhasil, maka akan muncul data yang Anda kirim sebelumnya melalui   
+   ![](/assets/2017-11-15_105928.png)
 
 ### 4.5.5 Percobaan Mengirim Data dengan TCP \(Arduino Client - PC Server\)
 
-Pada percobaan kali ini akan diuji coba pengiriman data melalui komunikasi ethernet menggunakan protokol UDP.
+Pada percobaan kali ini Arduino akan menjadi client dan PC akan menjadi server. Hercules akan membuka koneksi dan menunggu koneksi dari client \(arduino\). Arduino akan melakukan request koneksi ke server dengan IP Address dan port yang telah dibuka aksesnya oleh server. Setelah terkoneksi, Arduino akan mengirimkan data ke Server.
 
 **Kebutuhan Komponen**
 
-Untuk melakukan percobaan komunikasi data melalui ethernet1 dibutuhkan beberapa modul komponen berikut ini :
+Untuk melakukan percobaan ini dibutuhkan beberapa modul komponen berikut ini :
 
 1. [Arduino Uno](https://store.arduino.cc/usa/arduino-uno-rev3) 1 pcs
-2. Ethernet Shield 2 pcs
+2. [Ethernet Shield](https://store.arduino.cc/usa/arduino-ethernet-shield-2) 1 pcs
 3. Kabel Ethernet  1 pcs
 
 **Langkah Percobaan**
@@ -287,18 +294,18 @@ Untuk melakukan percobaan komunikasi data melalui ethernet1 dibutuhkan beberapa 
    }
    ```
 
-3. sdfsdfdsf
+3. Buka aplikasi Hercules dengan memilih mode TCP Server. Lakukan listening koneksi pada port 7000. Pastikan data yang dikirimkan Arduino muncul pada textbox received data.
 
 ### 4.5.6 Percobaan Menerima Data dengan TCP \(Arduino Client - PC Server\)
 
-Pada percobaan kali ini akan diuji coba pengiriman data melalui komunikasi ethernet menggunakan protokol UDP.
+Pada percobaan kali ini arduino yang berfungsi sebagai client akan menerima data dari server. Data akan dikirimkan melalui software Hercules yang berfungsi sebagai server.
 
 **Kebutuhan Komponen**
 
 Untuk melakukan percobaan komunikasi data melalui ethernet1 dibutuhkan beberapa modul komponen berikut ini :
 
 1. [Arduino Uno](https://store.arduino.cc/usa/arduino-uno-rev3) 1 pcs
-2. Ethernet Shield 2 pcs
+2. [Ethernet Shield](https://store.arduino.cc/usa/arduino-ethernet-shield-2) 1 pcs
 3. Kabel Ethernet  1 pcs
 
 **Langkah Percobaan**
@@ -342,7 +349,11 @@ Untuk melakukan percobaan komunikasi data melalui ethernet1 dibutuhkan beberapa 
    }
    ```
 
-3. sdfsdfsdf
+3. Lakukan uji coba pengiriman data melalui aplikasi Hercules pada port tujuan 7000. Pastikan data diterima oleh Arduino melalui serial monitor.
+
+### TUGAS
+
+1. Terdapat dua buah Arduino yang saling terhubung melalui ethernet. Arduino 1 terhubung ke potensiometer yang berada pada pin A0. Sedangkan Arduino 2 terhubung ke LED yang berada pada pin 10 \(PWM\). Arduino 1 akan mengirimkan data ADC dari potensiometer ke Arduino 2. Arduino 2 akan memproses data tersebut untuk mengatur nilai PWM pada pin 10. Gunakan salah satu protokol TCP atau UDP untuk mengerjakan soal ini !
 
 
 
