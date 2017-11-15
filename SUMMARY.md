@@ -23,4 +23,5 @@
   * [Frame Data Ethernet](ethernet/frame-data-ethernet.md)
   * [Mode Operasi Ethernet](ethernet/mode-operasi-ethernet.md)
   * [Protokol Komunikasi Data Ethernet](ethernet/protokol-komunikasi-data-ethernet.md)
+  * [Percobaan Ethernet](ethernet/percobaan-ethernet.md)
 
