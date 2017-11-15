@@ -226,8 +226,6 @@ Untuk melakukan percobaan komunikasi data melalui ethernet1 dibutuhkan beberapa 
      }
    }
 
-
-
    ```
 3. asdasd
 
