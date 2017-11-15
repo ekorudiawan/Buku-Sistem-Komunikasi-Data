@@ -2,20 +2,24 @@
 
 ### 4.5.1 Percobaan Mengirim Data dengan UDP
 
-Pada percobaan kali ini akan diuji coba pengiriman data melalui komunikasi ethernet menggunakan protokol UDP.
+Pada percobaan kali ini akan diuji coba pengiriman data antara dua perangkat melalui komunikasi ethernet menggunakan protokol UDP. Uji coba komunikasi data dilakukan pada Arduino dengan tambahan ethernet shield dan ethernet port pada komputer. Komputer akan membuka akses port 8888 untuk menerima data dari Arduino. IP Address yang digunakan oleh Arduino adalah "192.168.1.177". Sedangkan IP Address yang digunakan pada komputer adalah "192.168.1.2".
 
 **Kebutuhan Komponen**
 
-Untuk melakukan percobaan komunikasi data melalui ethernet1 dibutuhkan beberapa modul komponen berikut ini :
+Untuk melakukan percobaan komunikasi data melalui ethernet dibutuhkan beberapa modul komponen berikut ini :
 
 1. [Arduino Uno](https://store.arduino.cc/usa/arduino-uno-rev3) 1 pcs
-2. Ethernet Shield 2 pcs
+2. [Ethernet Shield](https://store.arduino.cc/usa/arduino-ethernet-shield-2) 1 pcs
 3. Kabel Ethernet  1 pcs
+
+**Kebutuhan Software**
+
+1. [Hercules](https://www.hw-group.com/products/hercules/index_en.html)
 
 **Langkah Percobaan**
 
-1. Hubungkan Arduino dengan ethernet shield
-2. Buatlah program pada Arduino seperti di bawah ini
+1. Hubungkan Arduino dengan ethernet shield.
+2. Buatlah program pada Arduino seperti di bawah ini. Lakukan upload program dan hubungkan kabel ethernet dari arduino ke PC.
 
    ```cpp
    #include <SPI.h>
@@ -52,7 +56,7 @@ Untuk melakukan percobaan komunikasi data melalui ethernet1 dibutuhkan beberapa 
    }
    ```
 
-3. Setting IP Address komputer Anda dengan IP Address static "192.168.1.2"  
+3. Setting IP Address komputer Anda dengan menggunakan IP Address static "192.168.1.2".  
    ![](/assets/2017-11-15_100614.png)
 
 4. Pastikan koneksi tidak bermasalah dengan cara melakukan PING pada IP Address Arduino.  
@@ -248,6 +252,7 @@ Untuk melakukan percobaan komunikasi data melalui ethernet1 dibutuhkan beberapa 
 
 1. Hubungkan Arduino dengan ethernet shield
 2. Buatlah program dibawah ini
+
    ```cpp
    #include <SPI.h>
    #include <Ethernet.h>
@@ -281,6 +286,7 @@ Untuk melakukan percobaan komunikasi data melalui ethernet1 dibutuhkan beberapa 
      delay(1000);
    }
    ```
+
 3. sdfsdfdsf
 
 ### 4.5.6 Percobaan Menerima Data dengan TCP \(Arduino Client - PC Server\)
