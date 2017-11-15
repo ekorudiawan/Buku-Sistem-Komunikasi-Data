@@ -195,6 +195,7 @@ Untuk melakukan percobaan komunikasi data melalui ethernet1 dibutuhkan beberapa 
 
 1. Hubungkan Arduino dengan ethernet shield
 2. Buatlah program dibawah ini
+
    ```cpp
    #include <SPI.h>
    #include <Ethernet.h>
@@ -281,6 +282,7 @@ Untuk melakukan percobaan komunikasi data melalui ethernet1 dibutuhkan beberapa 
 
 
    ```
+   
 3. asdasd
 
 ### 4.5.6 Percobaan Menerima Data dengan TCP \(Arduino Client - PC Server\)
