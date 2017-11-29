@@ -8,7 +8,7 @@
 
 ## 5.1.1 Percobaan MQTT
 
-Pada percobaan kali ini akan diuji coba pengiriman data menggunakan protokol MQTT. MQTT broker yang digunakan adalah  https://io.adafruit.com. Pada percobaan kali ini digunakan board mikrokontroler Wemos yang sudah terintegrasi dengan modul komunikasi WiFi. 
+Pada percobaan kali ini akan diuji coba pengiriman data menggunakan protokol MQTT. MQTT broker yang digunakan adalah  [https://io.adafruit.com](https://io.adafruit.com). Pada percobaan kali ini digunakan board mikrokontroler Wemos yang sudah terintegrasi dengan modul komunikasi WiFi.
 
 **Kebutuhan Komponen**
 
@@ -27,10 +27,10 @@ Koneksi
 **Langkah Percobaan**
 
 1. Buatlah akun di url berikut ini [https://io.adafruit.com](https://io.adafruit.com)
-2. Buatlah dashboard baru pada akun Anda dengan nama My Dashboard
+2. Buatlah dashboard baru pada akun Anda dengan nama My Dashboard  
    ![](/assets/2017-11-28_091224.png)![](/assets/2017-11-28_091346.png)
 
-3. Masuk ke dahboard yang telah Anda buat sebelumnya
+3. Masuk ke dahboard yang telah Anda buat sebelumnya  
    ![](/assets/2017-11-28_091358.png)
 
 4. Buat block baru dengan cara memilih menu '+'  
@@ -48,7 +48,7 @@ Koneksi
 8. Buatlah block baru dengan tipe Slider dengan nama **led\_pwm\_control** dan konfigurasi seperti berikut ini  
    ![](/assets/2017-11-28_092122.png)
 
-9. Pada Arduino buatlah program berikut ini 
+9. Pada Arduino buatlah program berikut ini
 
    ```c
    #include <ESP8266WiFi.h>
@@ -198,6 +198,8 @@ Koneksi
 11. Lakukan percobaan dengan cara merubah nilai pada dashboard Anda.
 
 ## 5.1.2 Tugas MQTT
+
+1. Buatlah sebuah aplikasi kontrol LED menggunakan MQTT. Terdapat dua client \(Wemos\) yang terkoneksi ke MQTT broker. Wemos 1 terkoneksi dengan push button dan Wemos 2 terkoneksi dengan LED. Wemos 1 melakukan publish data ke MQTT broker sedangkan Wemos 2 melakukan subscribe data dari MQTT broker. Jika push button pada Wemos 1 ditekan LED pada Wemos 2 akan menyala, begitu juga sebaliknya !
 
 
 
