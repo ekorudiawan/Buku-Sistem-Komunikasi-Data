@@ -4,7 +4,8 @@
 
 1. [http://mqtt.org/](http://mqtt.org/)
 2. [MQTT Protocol V3.1.1](http://docs.oasis-open.org/mqtt/mqtt/v3.1.1/os/mqtt-v3.1.1-os.pdf)
-3. GFDSF
+3. [http://www.instructables.com/id/Programming-the-WeMos-Using-Arduino-SoftwareIDE/](http://www.instructables.com/id/Programming-the-WeMos-Using-Arduino-SoftwareIDE/)
+4. [https://www.slideshare.net/ekorudiawan/mqtt-message-queue-telemetry-transport](https://www.slideshare.net/ekorudiawan/mqtt-message-queue-telemetry-transport)
 
 ## 5.1.1 Percobaan MQTT
 
