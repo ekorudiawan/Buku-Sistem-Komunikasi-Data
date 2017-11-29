@@ -240,7 +240,7 @@ Untuk melakukan percobaan komunikasi data melalui ethernet1 dibutuhkan beberapa 
 3. Buka software Hercules dengan mode TCP Client. Lakukan percobaan untuk mengirim data dan perhatikan data yang diterima pada Serial Monitor.  
    ![](/assets/2017-11-15_105922.png)
 
-4. Jika pengiriman data berhasil, maka akan muncul data yang Anda kirim sebelumnya melalui   
+4. Jika pengiriman data berhasil, maka akan muncul data yang Anda kirim sebelumnya melalui  
    ![](/assets/2017-11-15_105928.png)
 
 ### 4.5.5 Percobaan Mengirim Data dengan TCP \(Arduino Client - PC Server\)
